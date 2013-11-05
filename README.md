@@ -15,6 +15,8 @@ Features:
 
 3.Separate reusable components defined as static extension methods from test script.
 
-4.Build MVC Website to easily query,add,delete,update test data from DB.
+4.Data paremeterization from Database.
 
-5.Support both web and windows(even WPF) apps.
+5.MVC Website to easily query,add,delete,update test data from DB.
+
+6.Support both web and windows(even WPF) apps.
