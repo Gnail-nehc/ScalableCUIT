@@ -1,15 +1,13 @@
-USE [QA_Automation_Test_POC]
+USE [Automation]
 GO
 
-/****** Object:  StoredProcedure [QA_Automation_Test].[LoadControlTypeAndProperty]    Script Date: 03/02/2013 11:35:21 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[QA_Automation_Test].[LoadControlTypeAndProperty]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [QA_Automation_Test].[LoadControlTypeAndProperty]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Automation].[LoadControlTypeAndProperty]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [Automation].[LoadControlTypeAndProperty]
 GO
 
-USE [QA_Automation_Test_POC]
+USE [Automation]
 GO
 
-/****** Object:  StoredProcedure [QA_Automation_Test].[LoadControlTypeAndProperty]    Script Date: 03/02/2013 11:35:21 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -22,7 +20,7 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE [QA_Automation_Test].[LoadControlTypeAndProperty]
+CREATE PROCEDURE [Automation].[LoadControlTypeAndProperty]
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -1375,12 +1373,12 @@ BEGIN
 	  </Tech>
 	</UIMap>
 	'
-	insert into QA_Automation_Test.ControlType([Type],[Platform])
+	insert into Automation.ControlType([Type],[Platform])
 	select T.C.value('local-name(.)','varchar(20)') Type,
 	T.C.value('../@platform','varchar(50)') Platform
 	from @data.nodes('//Tech[@platform]/*') as T(C)
 	
-	insert into QA_Automation_Test.ControlProperty([Type],[Property])
+	insert into Automation.ControlProperty([Type],[Property])
 	select T.C.value('local-name(..)','varchar(20)') Type,
 	T.C.value('local-name(.)','varchar(20)') Property
 	from @data.nodes('//Tech/*/*') as T(C)
