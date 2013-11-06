@@ -1,15 +1,13 @@
-USE [QA_Automation_Test_POC]
+USE [Automation]
 GO
 
-/****** Object:  UserDefinedFunction [QA_Automation_Test].[GetAllDataWithinTestCase]    Script Date: 03/04/2013 04:54:40 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[QA_Automation_Test].[GetAllDataWithinTestCase]') AND type in (N'FN', N'IF', N'TF', N'FS', N'FT'))
-DROP FUNCTION [QA_Automation_Test].[GetAllDataWithinTestCase]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Automation].[GetAllDataWithinTestCase]') AND type in (N'FN', N'IF', N'TF', N'FS', N'FT'))
+DROP FUNCTION [Automation].[GetAllDataWithinTestCase]
 GO
 
-USE [QA_Automation_Test_POC]
+USE [Automation]
 GO
 
-/****** Object:  UserDefinedFunction [QA_Automation_Test].[GetAllDataWithinTestCase]    Script Date: 03/04/2013 04:54:40 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -22,7 +20,7 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE FUNCTION [QA_Automation_Test].[GetAllDataWithinTestCase] 
+CREATE FUNCTION [Automation].[GetAllDataWithinTestCase] 
 (	
 	-- Add the parameters for the function here
 	@ProjectId int, 
