@@ -1,4 +1,4 @@
-CustomCodedUI
+Scalable/Custom Coded UI Test 
 =============
 
 Summary:
@@ -17,6 +17,4 @@ Features:
 
 4.Data paremeterization from Database.
 
-5.MVC Website to easily query,add,delete,update test data from DB.
-
-6.Support both web and windows(even WPF) apps.
+5.Support both web and windows(even WPF) apps.
